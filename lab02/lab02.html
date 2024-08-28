@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<style>
+    body {
+        text-align: justify;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-weight: lighter;
+    }
+
+    ul
+    {
+        text-align: justify;
+    }
+
+    h1 {
+        color: rgb(0, 0, 63);
+        text-align: center;
+    }
+
+    h2
+    {
+        text-align: center;
+    }
+
+    h3 {
+        color: goldenrod;
+        font-size: 20px;
+    }
+
+    h4 {
+        color: darkgrey;
+        font-size: 20px;
+    }
+
+    h5 {
+        color: darkgoldenrod;
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        color: rgb(0, 0, 63);
+        text-align: center;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    a {
+        color: aqua;
+        text-decoration: none;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil nas Olimpíadas</title>
+</head>
+
+<body>
+    <h1> Brasil nas Olimpíadas de Paris 2024 </h1><br>
+
+    <p>Jogos Olímpicos de Verão de 2024, oficialmente denominados Jogos da XXXIII Olimpíada e comumente conhecidos como
+        Paris 2024, foi um evento multiesportivo internacional realizado de 26 de julho a 11 de agosto de 2024 na
+        França, com Paris como principal cidade anfitriã e 16 outras cidades espalhadas pela França Metropolitana, além
+        de uma subsede no Taiti.</p>
+    <br>
+
+    <img src="https://s2-cbn.glbimg.com/EQUbBN-WiJqcMUCvOVsMS2g43fw=/0x0:800x370/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d975fad146a14bbfad9e763717b09688/internal_photos/bs/2024/u/h/4AOkOBQ0y706Al1nzxNw/olympic-rings-without-rims.svg.png"
+        width="150">
+    <h2> <br>Medalhas: </h2>
+
+    <table border="1" align="center">
+        <tr align="center">
+            <th><h3> Ouro: </h3></th>
+            <th><h4> Prata: </h4></th>
+            <th><h5> Bronze: </h5></th>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Beatriz Souza | Judô</li>
+                    <li>Rebeca Andrade | Ginástica Artística | Solo feminino</li>
+                    <li>Ana Patrícia e Duda | Vôlei de praia</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Caio Bonfim | Atletismo</li>
+                    <li>Willian Lima | Judô</li>
+                    <li>Rebeca Andrade | Ginástica artística | Individual geral</li>
+                    <li>Rebeca Andrade | Ginástica artística | Salto</li>
+                    <li>Tatiana Weston-Webb | Surfe</li>
+                    <li>Isaquias Queiroz | Canoagem velocidade</li>
+                    <li>Brasil | Futebol feminino</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Larissa Pimenta | Judô</li>
+                    <li>Rayssa Leal | Skate Street</li>
+                    <li>Brasil | Ginástica Artística | Disputa por equipes</li>
+                    <li>Brasil | Judô | Equipes mistas</li>
+                    <li>Bia Ferreira | Boxe</li>
+                    <li>Gabriel Medina | Surfe</li>
+                    <li>Augusto Akio | Skate Park</li>
+                    <li>Edival Pontes "Netinho" | Taekwondo</li>
+                    <li>Alison dos Santos | Atletismo</li>
+                    <li>Brasil | Vôlei feminino</li>
+                </ul>
+            </td>
+        </tr>
+
+    </table>
+
+    <br><br>
+     <!-- Vídeo -->
+     <iframe width="560" height="315"  src="https://www.youtube.com/embed/YtkCv-9-c6Y?si=5GXgAg6ECYWgxQsz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <br><br><canvas id="canva" width="1500" height="10" style="border:1px solid #000000"></canvas>
+
+    <form>
+        <br><br><h2>Concorra a uma visita para Paris!</h2><br>
+        <label for="nome"> Nome: </label><br>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="esporte"> Qual esporte deseja assitir?</label><br>
+        <select id="esporte" name="esporte">
+            <option value="atletismo"> Atletismo </option>
+            <option value="futebol"> Futebol </option>
+            <option value="ginastica"> Ginástica </option>
+            <option value="surfe"> Surfe </option>
+            <option value="tenis"> Tenis </option>
+            <option value="volei"> Vôlei </option>
+        </select><br><br>
+
+        <label for="comentarios"> Por que você deve ser escolhido? </label><br>
+        <textarea id="comentarios" name="comentarios" rows="3" cols="50"> </textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <!-- Elementos Gráficos -->
+    <div class="container">
+        <svg width="100" height="100">
+            <circle cx="50" cy="50" r="40" stroke="rgb(0, 0, 63)" stroke-width="4" fill=none />
+        </svg>
+    </div>
+
+    Desenvolvido por Lorena Villagelin, agosto 2024
+</body>
+
+</html>

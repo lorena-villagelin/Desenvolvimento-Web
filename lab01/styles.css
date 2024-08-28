@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:azure;
+}
+
+h1 {
+    color:darkblue;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    color:midnightblue;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+a {
+    text-align: center;
+    color:navy;
+    text-decoration: none;
+}
