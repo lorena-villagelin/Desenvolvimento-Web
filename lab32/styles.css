@@ -1,0 +1,35 @@
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: lightpink;
+}
+
+h1{
+    font-weight: bold;
+}
+
+#question-container div {
+    margin-bottom: 20px;
+
+    
+}
+
+button {
+    background-color:rgb(223, 115, 131);
+    border-color: rgb(223, 115, 131);
+}
+
+label {
+    display: block; /* Faz cada resposta aparecer em uma nova linha */
+}
+
+.correct{
+    color: darkgreen;
+    font-weight: bolder;
+}
+
+.incorrect{
+    color:brown;
+    font-style: italic;
+}
