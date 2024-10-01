@@ -1,45 +1,46 @@
-const express = require('express');
-const path = require('path');
-const cors = require('cors')
+const express = require("express");
+const path = require("path");
+const cors = require("cors");
 
 const app = express();
 const port = 3000;
 
-app.use(cors(cors()));
-app.use(express.static(path.join(__dirname, 'public'))); //servir arquivos estáticos da pasta "public"
-app.use(express.utlencoded({ extended: true})); //formulário
-app.use(express.json());
+app.use(cors());
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: true })); // Para lidar com dados de formulários
+app.use(express.json()); // Para lidar com JSON, caso necessário
 
-
-// Rota para a página inicial
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Rota para a página principal
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Rota para a página "Sobre"
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'about.html'));
+app.get("/about", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "about.html"));
 });
 
-//Upload de arquivos
-app.post('/upload',(req, res) => {
-    let fileData = '';
-    //armazena dados do arquivo
-    req.on('data', (chunk) => {
-        fileData += chunk;
-    });
+// Rota para upload de arquivos
+app.post("/upload", (req, res) => {
+  let fileData = "";
 
-    req.on('end', () => {
-        res.status(200).json({ message: 'Upload realizado!'});
-    });
+  // Capturando os dados do arquivo enviado
+  req.on("data", (chunk) => {
+    fileData += chunk;
+  });
+
+  req.on("end", () => {
+    // Aqui estamos apenas simulando o upload e enviando uma resposta
+    res.status(200).json({ message: "Upload simulado com sucesso!" });
+  });
 });
 
-// Rota para a página "404"
-app.get('/404', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', '404.html'));
+// Rota 404 para páginas não encontradas
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
 });
 
-// Inicia o servidor
+// Iniciar o servidor
 app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando em http://localhost:${port}`);
 });
