@@ -7,13 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bem-vindo ao Node.js!</h1>
-    <p>Esta é a página inicial.</p>
-    </div>
+    <div class="container">
+        <h1>Bem-vindo ao Node.js!</h1>
+        <p>Esta é a página inicial.</p>
+        <div class="buttons">
+          <a href="/about">Sobre nós</a>
+          <a href="/404">Página 404</a>
+        </div>
         <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="file" name="file" required /><br />
-            <input type="submit" value="Enviar Arquivo" />
+          <input type="file" name="file" required />
+          <br />
+          <input type="submit" value="Enviar Arquivo" />
         </form>
-    </div>
+      </div>
 </body>
 </html>
