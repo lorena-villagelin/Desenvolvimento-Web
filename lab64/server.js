@@ -1,11 +1,15 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors')
 
 const app = express();
 const port = 3000;
 
-// Configura o Express para servir arquivos estáticos da pasta "public"
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors(cors()));
+app.use(express.static(path.join(__dirname, 'public'))); //servir arquivos estáticos da pasta "public"
+app.use(express.utlencoded({ extended: true})); //formulário
+app.use(express.json());
+
 
 // Rota para a página inicial
 app.get('/', (req, res) => {
@@ -17,6 +21,19 @@ app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
+//Upload de arquivos
+app.post('/upload',(req, res) => {
+    let fileData = '';
+    //armazena dados do arquivo
+    req.on('data', (chunk) => {
+        fileData += chunk;
+    });
+
+    req.on('end', () => {
+        res.status(200).json({ message: 'Upload realizado!'});
+    });
+});
+
 // Rota para a página "404"
 app.get('/404', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', '404.html'));
@@ -26,35 +43,3 @@ app.get('/404', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
 });
-
-// Simular Upload de Arquivos (sem armazenamento real)
-
-// O servidor simula a recepção de dados via upload.
-// Quando o cliente envia dados para a rota /upload, o servidor responde que o upload foi simulado com sucesso.
-
-const http = require('http');
-const hostname = '127.0.0.1';
-
-const server = http.createServer((req, res) => {
-    if (req.method === 'POST' && req.url === '/upload') {
-        let fileData = '';
-        req.on('data', chunk => {
-            fileData += chunk.toString();
-        });
-        req.on('end', () => {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-            res.end('Upload simulado com sucesso!');
-        });
-    } else {
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/plain; charset=utf-8');
-        res.end('Rota não encontrada');
-    }
-});
-
-server.listen(port, hostname, () => {
-    console.log(`Servidor rodando em http://${hostname}:${port}/`);
-});
-
-// curl -X POST http://127.0.0.1:3000/upload -F "file=@/Users/matias/workspace/Desenvolvimento-Web/lab64/ex16/arquivo.txt"
