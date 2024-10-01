@@ -11,7 +11,7 @@ Sites feitos usando o exemplo do professor, conectando um ao outro pelo MENU.
 Laboratório 08: 
 Apresentação do GitHub, inicialização feita com o acompanhamento do professor.
 
-Laboratório da aula 16:
+Laboratório da aula 16.
 Calculadora feita com HTML (index.html), CSS (style.css) e JavaStricpt(script.js).
 
 Laboratório 32: 
