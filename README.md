@@ -19,3 +19,6 @@ Laboratório 32:
 
 Laboratório 64:
 Páginas Index, Sobre e 404 Error feitas, implementadas por nodes e com envio de dados.
+
+Laboratório 128:
+Desenvolvimento do formulário com recebimento de dados pelo email.
